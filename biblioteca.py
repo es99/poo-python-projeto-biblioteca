@@ -16,15 +16,18 @@ class Biblioteca:
         if livro in self.livros and livro.status == True and membro in self.membros:
             membro.livros_emprestados.append(livro)
             livro.status = False
+            return True
         else:
-            return f"{livro} não pode ser emprestado."
+            return False
         
     def devolver_livro(self, livro, membro):
         if livro not in self.livros or membro not in self.membros or livro.status == True:
             print("Erro ao devolver livro!")
+            return False
         else:
             membro.livros_emprestados.remove(livro)
             livro.status = True
             print("Livro devolvido.")
+            return True
             
         

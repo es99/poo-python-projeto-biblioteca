@@ -9,10 +9,10 @@ class Livro:
         self.ano = ano
     
     def __str__(self):
-        return "id{}. {}, {}".format(self.id, self.titulo, self.autor)
+        return "{}, {}".format(self.titulo, self.autor)
     
     def __repr__(self):
-        return "id{}. {}, {}".format(self.id, self.titulo, self.autor)
+        return "{}, {}".format(self.titulo, self.autor)
         
     def describe_livro(self):
         print("Id:\t{}\nTítulo:\t{}\nAutor:\t{}\nAno:\t{}".format(
